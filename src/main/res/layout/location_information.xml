@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    >
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationProgress_info"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        />
+    
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layoutProgress"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/location"
+            android:text="Ciudad,Pais"
+            android:onClick="onClicckTextLocation"
+            android:clickable="true"
+            android:textSize="15pt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/coordinates"
+            android:clickable="true"
+            android:onClick="onClicckTextLocation"
+            android:text="Aquí van las coordenadas"
+            android:textSize="15pt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/temperature"
+            android:clickable="true"
+            android:onClick="onClicckTextLocation"
+            android:text="Aqui la temperatura"
+            android:textSize="15pt"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/bigicon"
+            />
+
+        
+        </LinearLayout>
+
+</FrameLayout>

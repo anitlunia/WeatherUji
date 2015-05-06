@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation ="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ToggleButton
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textOff="CurrentOff"
+            android:textOn="Current"
+            android:onClick="onCurrentToggleClicked"
+            android:checked="true"
+            android:id="@+id/current_toggle"
+            />
+        <ToggleButton
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onForecastToggleClicked"
+            android:textOff="ForecastOff"
+            android:textOn="Forecast"
+            android:id="@+id/forecast_toggle"/>
+        <ToggleButton
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onHourlyToggleClicked"
+            android:textOff="HourlyOff"
+            android:textOn="Hourly"
+
+            android:id="@+id/hourly_toggle"/>
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView android:id="@+id/warningLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Error"/>
+
+        <ProgressBar
+            android:id="@+id/weatherProgress"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_container"
+            android:orientation="vertical">
+
+        </FrameLayout>
+
+
+
+    </FrameLayout>
+
+
+</merge>
