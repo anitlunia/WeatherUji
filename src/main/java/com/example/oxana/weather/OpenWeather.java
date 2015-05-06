@@ -19,10 +19,19 @@ public class OpenWeather implements IWeatherProvider {
     private NetworkHelper networkHelper;
     String url = null;
 
+    private static final String CURRENT_WEATHER = "http://api.openweathermap.org/data/2.5/weather?APPID=2748012c541b050eb47e9f88de0dbc57&q=";
+    private static final String FORECAST_WEATHER = "http://api.openweathermap.org/data/2.5/forecast/daily?APPID=2748012c541b050eb47e9f88de0dbc57&q=";
+    private static final String HOURLY_WEATHER = "http://api.openweathermap.org/data/2.5/forecast?APPID=2748012c541b050eb47e9f88de0dbc57&q=";
+
+    public OpenWeather (NetworkHelper networkHelper){
+        this.networkHelper = networkHelper;
+
+    }
+
     @Override
     public void getForecast(Location location, final ResponseReceiver<WeatherPrediction[]> receiver) {
         try {
-            url = prefix + URLEncoder.encode(location.getNameCountry(), "UTF-8");
+            url = FORECAST_WEATHER + URLEncoder.encode(location.getNameCountry(), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -34,7 +43,7 @@ public class OpenWeather implements IWeatherProvider {
                         try {
                             JSONParsers.getWeatherForecastFromJSON(
                                     new JSONObject(response), receiver);
-                    } catch (JSONException e) {
+                        } catch (JSONException e) {
                             receiver.onErrorReceived("Bad format in JSON");
                         }
                     }
@@ -52,7 +61,7 @@ public class OpenWeather implements IWeatherProvider {
 
 
         try {
-            url = prefix + URLEncoder.encode(name, "UTF-8");
+            url = CURRENT_WEATHER + URLEncoder.encode(name, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -82,7 +91,7 @@ public class OpenWeather implements IWeatherProvider {
     public void getCurrentWeatherData(Location location, final ResponseReceiver<CurrentWeatherData> receiver) {
 
         try {
-            url = prefix + URLEncoder.encode(location.getNameCountry(), "UTF-8");
+            url = CURRENT_WEATHER + URLEncoder.encode(location.getNameCountry(), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -111,7 +120,7 @@ public class OpenWeather implements IWeatherProvider {
     public void getHourlyForecast(Location location,final  ResponseReceiver<HourlyPrediction[]> receiver) {
 
         try {
-            url = prefix + URLEncoder.encode(location.getNameCountry(), "UTF-8");
+            url = HOURLY_WEATHER + URLEncoder.encode(location.getNameCountry(), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

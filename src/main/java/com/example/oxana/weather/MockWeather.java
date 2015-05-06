@@ -32,7 +32,11 @@ public class MockWeather implements IWeatherProvider{
     @Override
     public void getCurrentWeatherData(Location location, ResponseReceiver<CurrentWeatherData> receiver) {
 
-    }
+
+
+
+
+     }
 
     @Override
     public void getHourlyForecast(Location location,ResponseReceiver<HourlyPrediction[]> receiver) {

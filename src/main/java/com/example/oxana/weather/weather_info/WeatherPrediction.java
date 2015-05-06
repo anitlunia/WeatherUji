@@ -23,4 +23,21 @@ public class WeatherPrediction {
         condition= cond;
 
     }
+
+    public Calendar getTimeStamp(){
+        return timeStamp;
+    }
+
+
+    public double getMaxTemperature(){
+        return maxTemperature;
+    }
+    public double getMinTemperature(){
+        return minTemperature;
+    }
+
+    public WeatherCondition getCondition(){
+        return condition;
+    }
+
 }

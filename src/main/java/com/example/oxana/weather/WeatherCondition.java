@@ -15,4 +15,20 @@ public class WeatherCondition {
 
     }
 
+    public String getMainCondition(){
+        return mainCondition;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public String getIcon(){
+        return icon;
+    }
+
+    public String toString(){
+        return mainCondition + ": " + description;
+    }
+
 }

@@ -19,4 +19,16 @@ public class HourlyPrediction {
         temperature = temp;
         condition = cond;
     }
+
+    public Calendar getTimeStamp(){
+        return timeStamp;
+    }
+
+    public double getTemperature(){
+        return temperature;
+
+    }
+    public WeatherCondition getCondition(){
+        return condition;
+    }
 }
